@@ -4,7 +4,7 @@ import os
 import os.path
 
 
-class Encryptor:
+class AES_Encryptor:
     def __init__(self,\
                 key=b'[EX\xc8\xd5\xbfI{\xa2$\x05(\xd5\x18\xbf\xc0\x85)\x10nc\x94\x02)j\xdf\xcb\xc4\x94\x9d(\x9e'):
         self.key = key
@@ -37,7 +37,7 @@ class Encryptor:
         with open(file_name, 'rb') as fo:
             ciphertext = fo.read()
         dec = self.decrypt(ciphertext, self.key)
-        with open("dec_rec_" + file_name, 'wb') as fo:
+        with open("dec_" + file_name, 'wb') as fo:
             fo.write(dec)
         # os.remove(file_name)
 
